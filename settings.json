@@ -14,8 +14,10 @@
   "files.autoSave": "off",
   "editor.minimap.enabled": false,
   "editor.fontFamily": "JetBrains Mono, monospace",
-  "editor.fontSize": 13,
-  "editor.lineHeight": 16,
+  "editor.fontSize": 24,
+  "editor.lineHeight": 24,
+  "terminal.integrated.fontSize": 16,
+  "window.zoomLevel": 0,
   "remote.SSH.remotePlatform": {
     "esl-server": "linux"
   },
@@ -45,8 +47,21 @@
       "before": ["K"],
       "commands": ["lineBreakInsert"],
       "silent": true
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "b"],
+      "commands": ["workbench.action.showAllEditors"]
     }
   ],
+
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-a>": false,
@@ -62,80 +77,24 @@
     "markdown": false,
     "scminput": false
   },
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Rosé Pine Moon",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "none",
-  "vim.smartRelativeLine": true
-}
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.labelFormat": "medium",
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "vim.smartRelativeLine": true,
 
-{
-  // General editor behavior
-  "editor.tabSize": 2, // Common in many style guides
-  "editor.insertSpaces": true, // No tabs, just spaces
-  "editor.detectIndentation": false, // Don’t auto-guess tab width
-  "editor.rulers": [
-    80,
-    100
-  ], // Vertical guide lines for line length
-  "editor.formatOnSave": false, // Auto-format code when saving
-  "editor.wordWrap": "off", // Don’t wrap long lines (hardware style guides prefer this)
-  "files.trimTrailingWhitespace": true, // Remove trailing spaces on save
-  "files.insertFinalNewline": true, // POSIX-style ending newline
-  "files.autoSave": "off",
-  "editor.minimap.enabled": false,
-  "editor.fontFamily": "JetBrains Mono, monospace",
-  "editor.fontSize": 13,
-  "editor.lineHeight": 16,
-  "remote.SSH.remotePlatform": {
-    "esl-server": "linux"
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
+  "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.next": true,
+      "**/target": true,
+      "**/.venv": true,
+      "**/run_dir": true
     },
-    {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["K"],
-      "commands": ["lineBreakInsert"],
-      "silent": true
-    }
-  ],
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
-  },
-  // To improve performance
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
-  },
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
-  "workbench.colorTheme": "Default Dark+",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "none",
-  "vim.smartRelativeLine": true
 }
